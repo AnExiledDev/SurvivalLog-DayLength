@@ -18,7 +18,7 @@ It shows no text of its own, so it works with the game in any language.
 [size=5]Known issues[/size]
 [list]
 [*]Actions cost game time, so with longer days they also take longer in real time. To keep actions as fast as before, raise the action speeds in the Action Speed mod by the same amount.[/*]
-[*]The game counts time with a whole number, so the day length you get can be a little off from the one you set. [font=Courier New]BepInEx&#92;LogOutput.log[/font] shows the length you actually got each time you load a save.[/*]
+[*]The game counts time with a whole number, so the day length you get can be a little off from the one you set. [font=Courier New]BepInEx\LogOutput.log[/font] shows the length you actually got each time you load a save.[/*]
 [/list]
 If you run into anything strange, please tell me (see Feedback below).
 
@@ -31,18 +31,18 @@ If you run into anything strange, please tell me (see Feedback below).
 [size=5]Installation[/size]
 [list=1]
 [*]Install [url=https://www.nexusmods.com/survivallog/mods/12]BepInEx[/url] [i](if no other mods were installed before, start the game once so BepInEx finishes setup, then quit)[/i].[/*]
-[*]Put [font=Courier New]DayLength.dll[/font] in the BepInEx&#92;plugins folder inside the game folder. Full path example:
-[code]C:&#92;Program Files (x86)&#92;Steam&#92;steamapps&#92;common&#92;Survival Log&#92;BepInEx&#92;plugins&#92;DayLength.dll[/code][/*]
+[*]Put [font=Courier New]DayLength.dll[/font] in the BepInEx\plugins folder inside the game folder. Full path example:
+[code]C:\Program Files (x86)\Steam\steamapps\common\Survival Log\BepInEx\plugins\DayLength.dll[/code][/*]
 [/list]
 
 [size=5]Uninstall[/size]
-Delete [font=Courier New]DayLength.dll[/font] from the [font=Courier New]BepInEx&#92;plugins[/font] folder.
+Delete [font=Courier New]DayLength.dll[/font] from the [font=Courier New]BepInEx\plugins[/font] folder.
 
 [size=5]Configuration[/size]
-To change the day length, edit [font=Courier New]DayLength[/font] in [font=Courier New]BepInEx&#92;config&#92;com.dev.survivallog.daylength.cfg[/font] while the game is closed (see [url=https://github.com/AnExiledDev/SurvivalLog-DayLength/blob/main/CONFIG.md]CONFIG.md[/url] for details). Changes apply when you load a save after the next game start.
+To change the day length, edit [font=Courier New]DayLength[/font] in [font=Courier New]BepInEx\config\com.dev.survivallog.daylength.cfg[/font] while the game is closed (see [url=https://github.com/AnExiledDev/SurvivalLog-DayLength/blob/main/CONFIG.md]CONFIG.md[/url] for details). Changes apply when you load a save after the next game start.
 
 [size=5]Feedback[/size]
-Found a bug or have an idea? Come say hi on the [url=https://discord.gg/trTsyxUFqg]Core Directive Discord[/url], or leave a comment here. For bugs, please include [font=Courier New]BepInEx&#92;LogOutput.log[/font].
+Found a bug or have an idea? Come say hi on the [url=https://discord.gg/trTsyxUFqg]Core Directive Discord[/url], or leave a comment here. For bugs, please include [font=Courier New]BepInEx\LogOutput.log[/font].
 
 [size=5]Source and license[/size]
 Open source under MIT: [url=https://github.com/AnExiledDev/SurvivalLog-DayLength]github.com/AnExiledDev/SurvivalLog-DayLength[/url]
@@ -66,7 +66,7 @@ Day Length 只改变游戏时间流逝的快慢，不会往存档里写入任何
 [size=5]已知问题[/size]
 [list]
 [*]动作会消耗游戏时间，所以一天变长后，动作在现实中花的时间也会变长。如果想让动作保持原来的速度，请在 Action Speed 模组中把动作速度提高相同的倍数。[/*]
-[*]游戏用整数计算时间，所以实际得到的一天长度可能和设置的数值略有出入。每次读取存档时，[font=Courier New]BepInEx&#92;LogOutput.log[/font] 都会记录实际的长度。[/*]
+[*]游戏用整数计算时间，所以实际得到的一天长度可能和设置的数值略有出入。每次读取存档时，[font=Courier New]BepInEx\LogOutput.log[/font] 都会记录实际的长度。[/*]
 [/list]
 遇到任何异常，欢迎告诉我（见下方「反馈」）。
 
@@ -79,18 +79,18 @@ Day Length 只改变游戏时间流逝的快慢，不会往存档里写入任何
 [size=5]安装[/size]
 [list=1]
 [*]安装 [url=https://www.nexusmods.com/survivallog/mods/12]BepInEx[/url] [i]（如果之前没有装过其他模组，先启动一次游戏，让 BepInEx 完成初始化，然后退出）[/i]。[/*]
-[*]把 [font=Courier New]DayLength.dll[/font] 放进游戏目录下的 BepInEx&#92;plugins 文件夹。完整路径示例：
-[code]C:&#92;Program Files (x86)&#92;Steam&#92;steamapps&#92;common&#92;Survival Log&#92;BepInEx&#92;plugins&#92;DayLength.dll[/code][/*]
+[*]把 [font=Courier New]DayLength.dll[/font] 放进游戏目录下的 BepInEx\plugins 文件夹。完整路径示例：
+[code]C:\Program Files (x86)\Steam\steamapps\common\Survival Log\BepInEx\plugins\DayLength.dll[/code][/*]
 [/list]
 
 [size=5]卸载[/size]
-从 [font=Courier New]BepInEx&#92;plugins[/font] 文件夹中删除 [font=Courier New]DayLength.dll[/font]。
+从 [font=Courier New]BepInEx\plugins[/font] 文件夹中删除 [font=Courier New]DayLength.dll[/font]。
 
 [size=5]配置[/size]
-如需修改一天的长度，请在游戏关闭时编辑 [font=Courier New]BepInEx&#92;config&#92;com.dev.survivallog.daylength.cfg[/font] 中的 [font=Courier New]DayLength[/font]。配置文件中的设置有中文说明，完整说明见 [url=https://github.com/AnExiledDev/SurvivalLog-DayLength/blob/main/CONFIG.md]CONFIG.md[/url]（英文）。修改会在下次启动游戏后读取存档时生效。
+如需修改一天的长度，请在游戏关闭时编辑 [font=Courier New]BepInEx\config\com.dev.survivallog.daylength.cfg[/font] 中的 [font=Courier New]DayLength[/font]。配置文件中的设置有中文说明，完整说明见 [url=https://github.com/AnExiledDev/SurvivalLog-DayLength/blob/main/CONFIG.md]CONFIG.md[/url]（英文）。修改会在下次启动游戏后读取存档时生效。
 
 [size=5]反馈[/size]
-发现 bug 或有好点子？欢迎来 [url=https://discord.gg/trTsyxUFqg]Core Directive Discord[/url] 打个招呼，或在这里留言。报告 bug 时，请附上 [font=Courier New]BepInEx&#92;LogOutput.log[/font]。
+发现 bug 或有好点子？欢迎来 [url=https://discord.gg/trTsyxUFqg]Core Directive Discord[/url] 打个招呼，或在这里留言。报告 bug 时，请附上 [font=Courier New]BepInEx\LogOutput.log[/font]。
 
 [size=5]源代码与许可[/size]
 基于 MIT 许可开源：[url=https://github.com/AnExiledDev/SurvivalLog-DayLength]github.com/AnExiledDev/SurvivalLog-DayLength[/url]
