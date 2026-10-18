@@ -20,7 +20,6 @@ It shows no text of its own, so it works with the game set to any language.
 - **Actions take longer in real time.** Actions cost game time, and game time now passes more slowly, so with 2x days an action takes twice as long to watch. To keep actions as fast as before, raise the action speeds in the Action Speed mod by the same amount.
 - **The day length is rounded.** The game counts time with a whole number, so the day length you get can be a little off from the one you set. The log shows the length you actually got (see Troubleshooting).
 - **Changes need a restart.** The setting is read when the game starts and applied when you load a save.
-- If anything feels off, please tell me (see [Feedback](#feedback-and-bug-reports)).
 
 ## Requirements
 

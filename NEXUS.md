@@ -20,7 +20,6 @@ It shows no text of its own, so it works with the game in any language.
 [*]Actions cost game time, so with longer days they also take longer in real time. To keep actions as fast as before, raise the action speeds in the Action Speed mod by the same amount.[/*]
 [*]The game counts time with a whole number, so the day length you get can be a little off from the one you set. [font=Courier New]BepInEx\LogOutput.log[/font] shows the length you actually got each time you load a save.[/*]
 [/list]
-If you run into anything strange, please tell me (see Feedback below).
 
 [size=5]Requirements[/size]
 [list]
@@ -69,7 +68,6 @@ Day Length 只改变游戏时间流逝的快慢，不会往存档里写入任何
 [*]动作会消耗游戏时间，所以一天变长后，动作在现实中花的时间也会变长。如果想让动作保持原来的速度，请在 Action Speed 模组中把动作速度提高相同的倍数。[/*]
 [*]游戏用整数计算时间，所以实际得到的一天长度可能和设置的数值略有出入。每次读取存档时，[font=Courier New]BepInEx\LogOutput.log[/font] 都会记录实际的长度。[/*]
 [/list]
-遇到任何异常，欢迎告诉我（见下方「反馈」）。
 
 [size=5]前置要求[/size]
 [list]
