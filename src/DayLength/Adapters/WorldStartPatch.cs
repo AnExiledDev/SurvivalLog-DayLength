@@ -17,9 +17,8 @@ internal static class WorldStartPatch
     private static double _dayLength = 1;
     private static Action<string> _log = _ => { };
 
-    public static void Apply(Harmony harmony, double dayLength, Action<string> log)
+    public static void Apply(Harmony harmony, Action<string> log)
     {
-        _dayLength = dayLength;
         _log = log;
 
         try
@@ -27,12 +26,19 @@ internal static class WorldStartPatch
             harmony.Patch(
                 AccessTools.Method(typeof(BattleLogicWorld), nameof(BattleLogicWorld.Initialize)),
                 prefix: new HarmonyMethod(typeof(WorldStartPatch), nameof(BeforeWorldStart)));
-            log($"hooked the world start, days will be {dayLength}x as long");
+            log("hooked the world start");
         }
         catch (Exception ex)
         {
             log($"could not hook BattleLogicWorld.Initialize, days keep their normal length: {ex.Message}");
         }
+    }
+
+    /// <summary>Used from the next time a save loads.</summary>
+    public static void UseDayLength(double dayLength)
+    {
+        _dayLength = dayLength;
+        _log($"days will be {dayLength}x as long from the next save load");
     }
 
     private static void BeforeWorldStart()
@@ -45,7 +51,7 @@ internal static class WorldStartPatch
             if (scaled is not int value) return;
 
             Toolset.TimeScale = value;
-            _log($"time scale {current} -> {value}, days are {DayScale.ActualDayLength(current, value):0.##}x as long");
+            _log($"time scale {current} -> {value}, days are {DayScale.ActualDayLength(Tracker.ChapterScale, value):0.##}x as long");
         }
         catch (Exception ex)
         {

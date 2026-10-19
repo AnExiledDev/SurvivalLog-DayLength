@@ -31,17 +31,21 @@ public static class DayScale
 
 /// <summary>
 /// The chapter writes its number before the world starts. Seeing the value this mod last wrote means it was
-/// already scaled, so it must not be divided again.
+/// already scaled, so the chapter's own number is the one kept from before, and a new day length is worked out from
+/// that, never from the scaled value.
 /// </summary>
 public sealed class ScaleTracker
 {
     private int? _lastWritten;
 
+    /// <summary>The chapter's own number, as last seen before this mod changed it.</summary>
+    public int ChapterScale { get; private set; }
+
     public int? Next(int current, double dayLength)
     {
-        if (current == _lastWritten) return null;
+        if (current != _lastWritten) ChapterScale = current;
 
-        var scaled = DayScale.Scaled(current, dayLength);
+        var scaled = DayScale.Scaled(ChapterScale, dayLength);
 
         _lastWritten = scaled;
 

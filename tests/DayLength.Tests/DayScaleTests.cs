@@ -75,6 +75,37 @@ public class DayScaleTests
     }
 
     [Fact]
+    public void A_new_day_length_on_an_already_scaled_number_works_from_the_chapter_number()
+    {
+        var tracker = new ScaleTracker();
+
+        tracker.Next(48, 2);
+
+        Assert.Equal(12, tracker.Next(24, 4));
+    }
+
+    [Fact]
+    public void Going_back_to_normal_length_restores_the_chapter_number()
+    {
+        var tracker = new ScaleTracker();
+
+        tracker.Next(48, 2);
+
+        Assert.Equal(48, tracker.Next(24, 1));
+    }
+
+    [Fact]
+    public void The_chapter_number_is_kept_for_the_log()
+    {
+        var tracker = new ScaleTracker();
+
+        tracker.Next(48, 2);
+        tracker.Next(24, 4);
+
+        Assert.Equal(48, tracker.ChapterScale);
+    }
+
+    [Fact]
     public void Normal_day_length_writes_nothing()
     {
         var tracker = new ScaleTracker();

@@ -19,18 +19,20 @@ It shows no text of its own, so it works with the game set to any language.
 
 - **Actions take longer in real time.** Actions cost game time, and game time now passes more slowly, so with 2x days an action takes twice as long to watch. To keep actions as fast as before, raise the action speeds in the Action Speed mod by the same amount.
 - **The day length is rounded.** The game counts time with a whole number, so the day length you get can be a little off from the one you set. The log shows the length you actually got (see Troubleshooting).
-- **Changes need a restart.** The setting is read when the game starts and applied when you load a save.
+- **Changes apply at the next save load.** A day already running keeps its length until you load a save.
 
 ## Requirements
 
 - Survival Log 1.1.18902. Built and tested on this version; a game update can break it until the mod is updated.
 - The [BepInEx Pack for Survival Log](https://www.nexusmods.com/survivallog/mods/12), the BepInEx 6 (IL2CPP) build for the game.
+- [Exiled's Toolkit](https://github.com/AnExiledDev/SurvivalLog-ExiledToolkit) 0.4.0 or newer, which applies changed settings at once. Day Length does not load without it.
 
 ## Install
 
 1. Install the [BepInEx Pack for Survival Log](https://www.nexusmods.com/survivallog/mods/12) (if no other mods were installed before, start the game once so BepInEx finishes setup, then quit).
-2. Download `DayLength-x.y.z.zip` from the [latest release](https://github.com/AnExiledDev/SurvivalLog-DayLength/releases/latest) or from [Nexus Mods](https://www.nexusmods.com/survivallog/mods/50).
-3. Extract the zip into the game folder (the folder with `SurvivalLog.exe`). It holds a `BepInEx` folder, so the DLL lands in the right place. When asked, merge the folders. The result should be:
+2. Install Exiled's Toolkit: download `ExiledToolkit-x.y.z.zip` from [its latest release](https://github.com/AnExiledDev/SurvivalLog-ExiledToolkit/releases/latest) or from Nexus Mods, and extract it into the game folder (the folder with `SurvivalLog.exe`).
+3. Download `DayLength-x.y.z.zip` from the [latest release](https://github.com/AnExiledDev/SurvivalLog-DayLength/releases/latest) or from [Nexus Mods](https://www.nexusmods.com/survivallog/mods/50).
+4. Extract the zip into the game folder (the folder with `SurvivalLog.exe`). It holds a `BepInEx` folder, so the DLL lands in the right place. When asked, merge the folders. The result should be:
    `C:\Program Files (x86)\Steam\steamapps\common\Survival Log\BepInEx\plugins\DayLength.dll`
 
 ## Uninstall
@@ -43,13 +45,13 @@ None. Day Length has no hotkeys and no buttons.
 
 ## Configuration
 
-Settings live in `BepInEx\config\com.dev.survivallog.daylength.cfg`, created the first time the game starts with the mod. Edit it while the game is closed; changes apply when you load a save after the next game start. See [CONFIG.md](CONFIG.md) for every setting.
+Settings live in `BepInEx\config\com.dev.survivallog.daylength.cfg`, created the first time the game starts with the mod. Change it in game on the Mod Manager's Mods screen, or edit the file while the game is closed. A new day length takes effect the next time you load a save. See [CONFIG.md](CONFIG.md) for every setting.
 
 ## Troubleshooting
 
 Day Length writes to `BepInEx\LogOutput.log`. Check it for these lines:
 
-- `Day Length 0.1.0 started` when the game starts.
+- `Day Length 0.2.0 started` when the game starts, then `days will be Nx as long from the next save load` with the setting, again each time you change it.
 - `hooked the world start, days will be 2x as long` right after. A line starting with `could not hook` instead means a game update broke the mod, and days keep their normal length.
 - `time scale A -> B, days are Nx as long` each time you load a save. N is the day length you actually got after rounding. No such line means the setting is 1, or the game's clock was already at that speed.
 
