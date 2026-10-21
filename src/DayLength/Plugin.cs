@@ -11,7 +11,7 @@ namespace DayLength;
 public sealed class Plugin : BasePlugin
 {
     private const string Guid = "com.dev.survivallog.daylength";
-    private const string Version = "0.2.0";
+    private const string Version = "0.2.1";
 
     public override void Load()
     {
@@ -22,7 +22,13 @@ public sealed class Plugin : BasePlugin
             $"每个游戏日持续的倍数。2 表示一天的现实时间变为原来的两倍。饥饿等需求、植物生长、灾难倒计时和动作时间都会随之变长，如需保持原来的动作速度，请提高动作速度。范围 {DayScale.MinDayLength} 到 {DayScale.MaxDayLength}。下次读取存档时生效。");
 
         Log.LogInfo($"Day Length {Version} started");
-        WorldStartPatch.Apply(new Harmony(Guid), Log.LogInfo);
+        WorldStartPatch.Apply(new Harmony(Guid), Write);
         OptionalLive.Watch(dayLength, value => WorldStartPatch.UseDayLength(DayScale.ClampDayLength(value)));
+    }
+
+    private void Write(string message)
+    {
+        if (HookFailure.Is(message)) Log.LogError(message);
+        else Log.LogInfo(message);
     }
 }
