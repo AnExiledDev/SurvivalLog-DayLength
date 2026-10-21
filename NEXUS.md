@@ -1,5 +1,5 @@
 Name: Day Length
-Summary: Makes each in-game day last longer in real time, twice as long by default. Hunger, plant growth and disaster countdowns slow down with it. 让游戏里的每一天在现实中持续更久，默认延长到两倍，饥饿、植物生长和灾难倒计时也会同步放慢。
+Summary: Make every in-game day last longer in real time, twice as long by default, anywhere from 0.25x to 10x. Hunger, plant growth, action times and disaster countdowns all stretch with it, so a day still costs the same food and disasters still arrive on the same day. You just get more real time to plan. Set it below 1 for shorter days.
 
 Description (BBCode):
 Days in Survival Log go by fast. Day Length slows the game clock so each day lasts longer in real time, and everything that runs on the clock slows with it. You get more time to think and plan, and nothing gets ahead of the clock.
@@ -23,7 +23,7 @@ It shows no text of its own, so it works with the game in any language.
 
 [size=5]Requirements[/size]
 [list]
-[*]Survival Log 1.1.18902. A game update can break it until the mod is updated.[/*]
+[*]Survival Log 1.1.19131. A game update can break it until the mod is updated.[/*]
 [*][url=https://www.nexusmods.com/survivallog/mods/12]BepInEx for Survival Log[/url]. Install it first.[/*]
 [*]Optional: [url=https://github.com/AnExiledDev/SurvivalLog-ExiledToolkit]Exiled's Toolkit[/url] 0.4.0 or newer. With it, settings changed on the Mod Manager's Mods screen take effect without restarting the game. Without it, they take effect at the next game start.[/*]
 [/list]
@@ -75,7 +75,7 @@ Day Length 只改变游戏时间流逝的快慢，不会往存档里写入任何
 
 [size=5]前置要求[/size]
 [list]
-[*]Survival Log 1.1.18902。游戏更新后模组可能暂时失效，直到模组更新为止。[/*]
+[*]Survival Log 1.1.19131。游戏更新后模组可能暂时失效，直到模组更新为止。[/*]
 [*][url=https://www.nexusmods.com/survivallog/mods/12]BepInEx for Survival Log[/url]，请先安装。[/*]
 [*]可选：[url=https://github.com/AnExiledDev/SurvivalLog-ExiledToolkit]Exiled's Toolkit[/url] 0.4.0 或更新版本。装了它，在 Mod Manager 的「模组」界面改动的设置无需重启游戏即可生效；没装的话，改动在下次启动游戏时生效。[/*]
 [/list]
