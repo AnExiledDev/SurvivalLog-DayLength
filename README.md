@@ -51,7 +51,7 @@ Settings live in `BepInEx\config\com.dev.survivallog.daylength.cfg`, created the
 
 Day Length writes to `BepInEx\LogOutput.log`. Check it for these lines:
 
-- `Day Length 0.2.0 started` when the game starts, then `days will be Nx as long from the next save load` with the setting, again each time you change it.
+- `Day Length 0.2.1 started` when the game starts, then `days will be Nx as long from the next save load` with the setting, again each time you change it.
 - `hooked the world start, days will be 2x as long` right after. A line starting with `could not hook` instead means a game update broke the mod, and days keep their normal length.
 - `time scale A -> B, days are Nx as long` each time you load a save. N is the day length you actually got after rounding. No such line means the setting is 1, or the game's clock was already at that speed.
 
