@@ -2,6 +2,8 @@ Name: Day Length
 Summary: Make every in-game day last longer in real time, twice as long by default, anywhere from 0.25x to 10x. Hunger, plant growth, action times and disaster countdowns all stretch with it, so a day still costs the same food and disasters still arrive on the same day. You just get more real time to plan. Set it below 1 for shorter days.
 
 Description (BBCode):
+[center][img]https://sldb.core-directive.com/media/save/1-save-safe.png[/img][/center]
+
 Days in Survival Log go by fast. Day Length slows the game clock so each day lasts longer in real time, and everything that runs on the clock slows with it. You get more time to think and plan, and nothing gets ahead of the clock.
 
 [size=5]Main features[/size]
