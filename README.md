@@ -45,13 +45,13 @@ None. Day Length has no hotkeys and no buttons.
 
 ## Configuration
 
-Settings live in `BepInEx\config\com.dev.survivallog.daylength.cfg`, created the first time the game starts with the mod. Change it in game on the Mod Manager's Mods screen, or edit the file while the game is closed. A new day length takes effect the next time you load a save. See [CONFIG.md](CONFIG.md) for every setting. Without Exiled's Toolkit installed, changes made on the Mods screen take effect at the next game start instead.
+Settings live in `BepInEx\config\com.dev.survivallog.daylength.cfg`, created the first time the game starts with the mod. Change it in game on the Mod Manager's Mods screen, or edit the file while the game is closed. A new day length takes effect the next time you load a save. See [CONFIG.md](CONFIG.md) for every setting. With Exiled's Toolkit 0.17.0 or newer, each world can keep its own day length: pick it for a new world in Customizable Difficulty, or, while you play, change it for that world alone on the Mods screen. Without Exiled's Toolkit installed, changes made on the Mods screen take effect at the next game start instead.
 
 ## Troubleshooting
 
 Day Length writes to `BepInEx\LogOutput.log`. Check it for these lines:
 
-- `Day Length 0.2.1 started` when the game starts, then `days will be Nx as long from the next save load` with the setting, again each time you change it.
+- `Day Length 0.3.0 started` when the game starts, then `days will be Nx as long from the next save load` with the setting, again each time you change it.
 - `hooked the world start, days will be 2x as long` right after. A line starting with `could not hook` instead means a game update broke the mod, and days keep their normal length.
 - `time scale A -> B, days are Nx as long` each time you load a save. N is the day length you actually got after rounding. No such line means the setting is 1, or the game's clock was already at that speed.
 

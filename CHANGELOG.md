@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+- Each world can keep its own day length. With Exiled's Toolkit 0.17.0 or newer, pick it for a new world in Customizable Difficulty, or change it for the world you are playing on the Mod Manager's Mods screen. It takes effect the next time that world loads.
+- Made for Survival Log 1.1.20151.
+
 ## 0.2.1
 
 - After a game update, Mod Manager can tell you if this mod may need an update.
