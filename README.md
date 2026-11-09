@@ -1,12 +1,12 @@
 # Day Length
 
-Makes each in-game day last longer in real time. Twice as long by default.
+Makes each in-game day last longer in real time. Out of the box it changes nothing: set `DayLength` to 2 for days twice as long.
 
 A day in Survival Log goes by fast. Day Length slows the game clock so each day lasts as many times longer as you set, and everything that runs on the clock slows with it: hunger and other needs, plant growth, disaster countdowns and the time actions take. You get more real time to think and plan each day, and the game stays balanced because nothing gets ahead of the clock.
 
 ## Features
 
-- **Longer days**: set `DayLength` to how many times longer a day should last. 2 (the default) means a day takes twice as long in real time. Any value from 0.25 to 10 works.
+- **Longer days**: set `DayLength` to how many times longer a day should last. 1 (the default) is the game's own day length; 2 means a day takes twice as long in real time. Any value from 0.25 to 10 works.
 - **Everything keeps pace**: hunger and other needs, plant growth, disaster countdowns and action times all run on the same clock, so they all stretch with the day. A day still costs the same food and brings disasters on the same day as before.
 - **Shorter days too**: a value below 1 makes days shorter instead. 0.5 means a day goes by in half the real time.
 - **Every save**: the day length is set each time you load a save, for every save and every chapter.

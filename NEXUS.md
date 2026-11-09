@@ -1,14 +1,16 @@
 Name: Day Length
-Summary: Make every in-game day last longer in real time, twice as long by default, anywhere from 0.25x to 10x. Hunger, plant growth, action times and disaster countdowns all stretch with it, so a day still costs the same food and disasters still arrive on the same day. You just get more real time to plan. Set it below 1 for shorter days.
+Summary: Make every in-game day last longer in real time, anywhere from 0.25x to 10x. It starts at the game's own length: set DayLength to 2 for twice as long. Hunger, plant growth, action times and disaster countdowns all stretch with it, so a day still costs the same food and disasters still arrive on the same day. Set it below 1 for shorter days.
 
 Description (BBCode):
 [center][img]https://sldb.core-directive.com/media/save/1-save-safe.png[/img][/center]
 
 Days in Survival Log go by fast. Day Length slows the game clock so each day lasts longer in real time, and everything that runs on the clock slows with it. You get more time to think and plan, and nothing gets ahead of the clock.
 
+Out of the box it changes nothing: days keep the game's own length until you set DayLength, for example to 2 for days twice as long.
+
 [size=5]Main features[/size]
 [list]
-[*][b]Longer days[/b]: set how many times longer a day should last. 2 (the default) means a day takes twice as long in real time. Any value from 0.25 to 10 works.[/*]
+[*][b]Longer days[/b]: set how many times longer a day should last. 1 (the default) is the game's own day length; 2 means a day takes twice as long in real time. Any value from 0.25 to 10 works.[/*]
 [*][b]Everything keeps pace[/b]: hunger and other needs, plant growth, disaster countdowns and action times stretch with the day, so a day still costs the same food and disasters still come on the same day.[/*]
 [*][b]Shorter days too[/b]: a value below 1 makes days shorter instead.[/*]
 [*][b]Every save[/b]: the day length is set each time you load a save.[/*]
@@ -61,9 +63,11 @@ Open source under MIT: [url=https://github.com/AnExiledDev/SurvivalLog-DayLength
 
 Survival Log 里的一天过得很快。Day Length 会放慢游戏时钟，让每一天在现实中持续更久，所有跟着时钟走的东西也会一起放慢。你有更多时间思考和规划，也不会有任何东西跑在时钟前面。
 
+默认设置下本模组不做任何改变：一天保持游戏原本的长度，直到你设置 DayLength，例如设为 2 让一天变为两倍长。
+
 [size=5]主要功能[/size]
 [list]
-[*][b]更长的一天[/b]：设置一天要延长到几倍。默认值 2 表示一天的现实时间变为原来的两倍。可设为 0.25 到 10 之间的任意数值。[/*]
+[*][b]更长的一天[/b]：设置一天要延长到几倍。默认值 1 为游戏原本的一天长度；2 表示一天的现实时间变为原来的两倍。可设为 0.25 到 10 之间的任意数值。[/*]
 [*][b]一切同步放慢[/b]：饥饿等需求、植物生长、灾难倒计时和动作时间都会随一天一起变长，所以每天消耗的食物不变，灾难也仍在同一天到来。[/*]
 [*][b]也能缩短[/b]：设为小于 1 的数值，一天反而会变短。[/*]
 [*][b]所有存档通用[/b]：每次读取存档时都会设置一天的长度。[/*]

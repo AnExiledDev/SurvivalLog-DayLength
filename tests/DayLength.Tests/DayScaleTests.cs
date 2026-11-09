@@ -6,6 +6,13 @@ namespace DayLength.Tests;
 public class DayScaleTests
 {
     [Fact]
+    public void The_default_day_length_leaves_the_game_clock_alone()
+    {
+        // Installing the mod must change no balance until the player picks a day length.
+        Assert.Null(new ScaleTracker().Next(48, DayScale.DefaultDayLength));
+    }
+
+    [Fact]
     public void Twice_as_long_days_halve_the_game_seconds_per_real_second()
     {
         Assert.Equal(24, DayScale.Scaled(48, 2));
