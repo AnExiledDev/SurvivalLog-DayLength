@@ -1,16 +1,16 @@
 Name: Day Length
-Summary: Make every in-game day last longer in real time, anywhere from 0.25x to 10x. It starts at the game's own length: set DayLength to 2 for twice as long. Hunger, plant growth, action times and disaster countdowns all stretch with it, so a day still costs the same food and disasters still arrive on the same day. Set it below 1 for shorter days.
+Summary: Make every in-game day last longer in real time, anywhere from 0.25x to 10x. It starts at the game's length: set DayLength to 2 for twice as long. Hunger, plant growth, action times and disaster countdowns all stretch with it, so a day still costs the same food and disasters still arrive on the same day. Set it below 1 for shorter days.
 
 Description (BBCode):
 [center][img]https://sldb.core-directive.com/media/save/1-save-safe.png[/img][/center]
 
 Days in Survival Log go by fast. Day Length slows the game clock so each day lasts longer in real time, and everything that runs on the clock slows with it. You get more time to think and plan, and nothing gets ahead of the clock.
 
-Out of the box it changes nothing: days keep the game's own length until you set DayLength, for example to 2 for days twice as long.
+Out of the box it changes nothing: days keep the game's length until you set DayLength, for example to 2 for days twice as long.
 
 [size=5]Main features[/size]
 [list]
-[*][b]Longer days[/b]: set how many times longer a day should last. 1 (the default) is the game's own day length; 2 means a day takes twice as long in real time. Any value from 0.25 to 10 works.[/*]
+[*][b]Longer days[/b]: set how many times longer a day should last. 1 (the default) is the game's day length; 2 means a day takes twice as long in real time. Any value from 0.25 to 10 works.[/*]
 [*][b]Everything keeps pace[/b]: hunger and other needs, plant growth, disaster countdowns and action times stretch with the day, so a day still costs the same food and disasters still come on the same day.[/*]
 [*][b]Shorter days too[/b]: a value below 1 makes days shorter instead.[/*]
 [*][b]Every save[/b]: the day length is set each time you load a save.[/*]

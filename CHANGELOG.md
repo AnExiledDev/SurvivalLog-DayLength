@@ -2,7 +2,7 @@
 
 ## 0.3.1
 
-- `DayLength` now defaults to 1, the game's own day length, so the mod changes nothing until you set it. A value you already saved is kept.
+- `DayLength` now defaults to 1, the game's day length, so the mod changes nothing until you set it. A value you already saved is kept.
 - Made for Survival Log 1.1.20719.
 
 ## 0.3.0

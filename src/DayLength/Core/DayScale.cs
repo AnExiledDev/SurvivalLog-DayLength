@@ -11,7 +11,7 @@ public static class DayScale
     public const double MinDayLength = 0.25;
     public const double MaxDayLength = 10;
 
-    /// <summary>The game's own day length: installing the mod changes nothing until a length is set.</summary>
+    /// <summary>The game's day length: installing the mod changes nothing until a length is set.</summary>
     public const double DefaultDayLength = 1;
 
     public static double ClampDayLength(double dayLength) =>
