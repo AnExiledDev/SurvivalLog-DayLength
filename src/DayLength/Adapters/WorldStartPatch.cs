@@ -16,15 +16,14 @@ namespace DayLength.Adapters;
 internal static class WorldStartPatch
 {
     private static readonly ScaleTracker Tracker = new();
-    private static double _dayLength = 1;
     private static Action<string> _log = _ => { };
-    private static Func<double>? _current;
+    private static Func<double> _current = () => 1;
 
     /// <summary>
     /// <paramref name="current"/> reads the setting as the world starts, for a value set in the same frame (a world's
-    /// own value is set then, and a watched change reaches <see cref="UseDayLength"/> only at the next frame).
+    /// own value is set then, and a watched change reaches <see cref="LogDayLength"/> only at the next frame).
     /// </summary>
-    public static void Apply(Harmony harmony, Action<string> log, Func<double>? current)
+    public static void Apply(Harmony harmony, Action<string> log, Func<double> current)
     {
         _log = log;
         _current = current;
@@ -44,19 +43,15 @@ internal static class WorldStartPatch
         }
     }
 
-    /// <summary>Used from the next time a save loads.</summary>
-    public static void UseDayLength(double dayLength)
-    {
-        _dayLength = dayLength;
-        _log($"days will be {dayLength}x as long from the next save load");
-    }
+    /// <summary>Logs the setting when it changes. The world reads it as it starts, so it is used from the next save load.</summary>
+    public static void LogDayLength(double dayLength) => _log($"days will be {dayLength}x as long from the next save load");
 
     private static void BeforeWorldStart()
     {
         try
         {
             var current = Toolset.TimeScale;
-            var scaled = Tracker.Next(current, _current?.Invoke() ?? _dayLength);
+            var scaled = Tracker.Next(current, _current());
 
             if (scaled is not int value) return;
 

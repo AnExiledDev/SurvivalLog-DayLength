@@ -25,13 +25,13 @@ It shows no text of its own, so it works with the game set to any language.
 
 - Survival Log 1.1.19611. Built and tested on this version; a game update can break it until the mod is updated.
 - The [BepInEx Pack for Survival Log](https://www.nexusmods.com/survivallog/mods/12), the BepInEx 6 (IL2CPP) build for the game.
-- Optional: [Exiled's Toolkit](https://github.com/AnExiledDev/SurvivalLog-ExiledToolkit) 0.4.0 or newer. With it, settings changed on the Mod Manager's Mods screen take effect without restarting the game. Without it, they take effect at the next game start.
+- [Exiled's Toolkit](https://github.com/AnExiledDev/SurvivalLog-ExiledToolkit) 0.19.0 or newer. Day Length does not load without it. It applies settings changed on the Mod Manager's Mods screen without restarting the game, and lets each world keep its own day length.
 - Optional: [Mod Manager](https://www.nexusmods.com/survivallog/mods/73). With it, you can change every setting in game on its Mods screen and see what each one does, without opening the config file.
 
 ## Install
 
 1. Install the [BepInEx Pack for Survival Log](https://www.nexusmods.com/survivallog/mods/12) (if no other mods were installed before, start the game once so BepInEx finishes setup, then quit).
-2. Optional, to change settings without a restart: install Exiled's Toolkit. Download `ExiledToolkit-x.y.z.zip` from [its latest release](https://github.com/AnExiledDev/SurvivalLog-ExiledToolkit/releases/latest) or from [Nexus Mods](https://www.nexusmods.com/survivallog/mods/61), and extract it into the game folder (the folder with `SurvivalLog.exe`).
+2. Install Exiled's Toolkit. Download `ExiledToolkit-x.y.z.zip` from [its latest release](https://github.com/AnExiledDev/SurvivalLog-ExiledToolkit/releases/latest) or from [Nexus Mods](https://www.nexusmods.com/survivallog/mods/61), and extract it into the game folder (the folder with `SurvivalLog.exe`).
 3. Download `DayLength-x.y.z.zip` from the [latest release](https://github.com/AnExiledDev/SurvivalLog-DayLength/releases/latest) or from [Nexus Mods](https://www.nexusmods.com/survivallog/mods/50).
 4. Extract the zip into the game folder (the folder with `SurvivalLog.exe`). It holds a `BepInEx` folder, so the DLL lands in the right place. When asked, merge the folders. The result should be:
    `C:\Program Files (x86)\Steam\steamapps\common\Survival Log\BepInEx\plugins\DayLength.dll`
@@ -46,7 +46,7 @@ None. Day Length has no hotkeys and no buttons.
 
 ## Configuration
 
-Settings live in `BepInEx\config\com.dev.survivallog.daylength.cfg`, created the first time the game starts with the mod. Change it in game on the Mod Manager's Mods screen, or edit the file while the game is closed. A new day length takes effect the next time you load a save. See [CONFIG.md](CONFIG.md) for every setting. With Exiled's Toolkit 0.17.0 or newer, each world can keep its own day length: pick it for a new world in Customizable Difficulty, or, while you play, change it for that world alone on the Mods screen. Without Exiled's Toolkit installed, changes made on the Mods screen take effect at the next game start instead.
+Settings live in `BepInEx\config\com.dev.survivallog.daylength.cfg`, created the first time the game starts with the mod. Change it in game on the Mod Manager's Mods screen, or edit the file while the game is closed. A new day length takes effect the next time you load a save. See [CONFIG.md](CONFIG.md) for every setting. Each world can keep its own day length: pick it for a new world in Customizable Difficulty, or, while you play, change it for that world alone on the Mods screen.
 
 ## Troubleshooting
 
@@ -72,7 +72,7 @@ This is a BepInEx 6 IL2CPP plugin. It compiles against BepInEx and the game's IL
 dotnet build src/DayLength -c Release -p:GameDir="C:\path\to\Survival Log"
 ```
 
-`GameDir` is the game folder. The default in the project file is a local path you will almost certainly need to override. The output DLL is at `src\DayLength\bin\Release\DayLength.dll`.
+`GameDir` is the game folder. The default in the project file is a local path you will almost certainly need to override. Compiling also needs Exiled's Toolkit 0.19.0 or newer: point `-p:ToolkitDll="C:\path\to\ExiledToolkit.dll"` at its DLL. The output DLL is at `src\DayLength\bin\Release\DayLength.dll`.
 
 The unit tests cover the pure day length math and need nothing from the game:
 
