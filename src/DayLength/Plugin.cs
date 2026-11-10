@@ -8,11 +8,11 @@ using HarmonyLib;
 namespace DayLength;
 
 [BepInPlugin(Guid, "Day Length", Version)]
-[BepInDependency(ToolkitGuid, ">=0.19.0")]
+[BepInDependency(ToolkitGuid, ">=0.20.0")]
 public sealed class Plugin : BasePlugin
 {
     private const string Guid = "com.dev.survivallog.daylength";
-    private const string Version = "0.3.2";
+    private const string Version = "0.3.3";
     private const string ToolkitGuid = "com.dev.survivallog.exiledtoolkit";
 
     public override void Load()

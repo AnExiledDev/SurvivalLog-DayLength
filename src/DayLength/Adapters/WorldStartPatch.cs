@@ -1,5 +1,6 @@
 using System;
 using DayLength.Core;
+using ExiledToolkit.Game;
 using GameCore.HotUpdate;
 using GameCore.HotUpdate.Battle.Logic;
 using HarmonyLib;
@@ -28,19 +29,9 @@ internal static class WorldStartPatch
         _log = log;
         _current = current;
 
-        try
-        {
-            var target = AccessTools.Method(typeof(ChallengeSetupContext), nameof(ChallengeSetupContext.TryConsume));
-
-            if (target == null) throw new MissingMethodException("ChallengeSetupContext.TryConsume not found");
-
-            harmony.Patch(target, postfix: new HarmonyMethod(typeof(WorldStartPatch), nameof(BeforeWorldStart)) { priority = Priority.Last });
-            log("hooked the world start");
-        }
-        catch (Exception ex)
-        {
-            log($"could not hook ChallengeSetupContext.TryConsume, days keep their normal length: {ex.Message}");
-        }
+        new PatchKit(harmony, log).Patch(
+            typeof(WorldStartPatch), typeof(ChallengeSetupContext), nameof(ChallengeSetupContext.TryConsume), null, Priority.Last,
+            postfix: nameof(BeforeWorldStart), done: "hooked the world start", consequence: "days keep their normal length");
     }
 
     /// <summary>Logs the setting when it changes. The world reads it as it starts, so it is used from the next save load.</summary>
