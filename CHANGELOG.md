@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.4
+
+- Clearer wording in the settings and on the Mods screen.
+- The Mods screen no longer says days are twice as long by default. They keep their normal length until you set `DayLength`.
+- Made for Survival Log 1.1.20719.
+
 ## 0.3.3
 
 - Now needs Exiled's Toolkit 0.20.0 or newer.
@@ -7,12 +13,12 @@
 
 ## 0.3.2
 
-- Now uses Exiled's Toolkit for its shared parts, so it needs Exiled's Toolkit 0.19.0 or newer.
+- Some of its code now lives in Exiled's Toolkit, so it needs Exiled's Toolkit 0.19.0 or newer.
 - Made for Survival Log 1.1.20719.
 
 ## 0.3.1
 
-- `DayLength` now defaults to 1, the game's day length, so the mod changes nothing until you set it. A value you already saved is kept.
+- Days now keep their normal length until you set `DayLength`, because its default is now 1. If you already set a value, it is kept.
 - Made for Survival Log 1.1.20719.
 
 ## 0.3.0
@@ -36,4 +42,4 @@
 
 - First public release.
 - Each in-game day lasts longer in real time, twice as long by default.
-- Hunger, plant growth and disaster countdowns slow down to match, so a day still costs the same.
+- Hunger, plant growth and disaster countdowns slow down to match, so a day still costs the same food.

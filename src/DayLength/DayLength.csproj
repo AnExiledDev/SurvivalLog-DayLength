@@ -30,7 +30,7 @@
   <!-- What the Mod Manager's Mods screen shows about this mod. -->
   <ItemGroup>
     <AssemblyMetadata Include="ModManager.Name" Value="Day Length&#10;昼夜时长" />
-    <AssemblyMetadata Include="ModManager.Description" Value="Makes each in-game day last longer in real time, twice as long by default. Hunger, plant growth and disaster countdowns slow down with it.&#10;让游戏里的每一天在现实中持续更久，默认延长到两倍，饥饿、植物生长和灾难倒计时也会同步放慢。" />
+    <AssemblyMetadata Include="ModManager.Description" Value="Makes each in-game day last longer in real time, from 0.25 to 10 times as long. Hunger, plant growth, disaster countdowns and action times all stretch with the day.&#10;让游戏里的每一天在现实中持续更久，可设为 0.25 到 10 倍。饥饿、植物生长、灾难倒计时和动作时间都会随一天一起变长。" />
     <AssemblyMetadata Include="ModManager.Author" Value="AnExiledDev" />
     <AssemblyMetadata Include="ModManager.Category" Value="Balance" />
     <AssemblyMetadata Include="ModManager.GameVersion" Value="1.1.20719" />

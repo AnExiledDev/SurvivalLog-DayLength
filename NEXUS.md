@@ -1,18 +1,18 @@
 Name: Day Length
-Summary: Make every in-game day last longer in real time, anywhere from 0.25x to 10x. It starts at the game's length: set DayLength to 2 for twice as long. Hunger, plant growth, action times and disaster countdowns all stretch with it, so a day still costs the same food and disasters still arrive on the same day. Set it below 1 for shorter days.
+Summary: Make every in-game day last longer in real time, anywhere from 0.25x to 10x. Days keep their normal length until you set DayLength. Set it to 2 for days twice as long. Hunger, plant growth, action times and disaster countdowns stretch with the day, so a day still costs the same food and disasters still arrive on the same day. Set it below 1 for shorter days.
 
 Description (BBCode):
 [center][img]https://sldb.core-directive.com/media/save/1-save-safe.png[/img]
 [img]https://sldb.core-directive.com/media/notice/off.png[/img][/center]
 
-Days in Survival Log go by fast. Day Length slows the game clock so each day lasts longer in real time, and everything that runs on the clock slows with it. You get more time to think and plan, and nothing gets ahead of the clock.
+Days in Survival Log go by fast. Day Length slows the game clock so each day lasts longer in real time, and everything that runs on the clock slows with it. You get more real time to think and plan each day.
 
-Out of the box it changes nothing: days keep the game's length until you set DayLength, for example to 2 for days twice as long.
+It changes nothing until you set DayLength. Set it to 2 and each day lasts twice as long.
 
 [size=5]Main features[/size]
 [list]
-[*][b]Longer days[/b]: set how many times longer a day should last. 1 (the default) is the game's day length; 2 means a day takes twice as long in real time. Any value from 0.25 to 10 works.[/*]
-[*][b]Everything keeps pace[/b]: hunger and other needs, plant growth, disaster countdowns and action times stretch with the day, so a day still costs the same food and disasters still come on the same day.[/*]
+[*][b]Longer days[/b]: set how many times longer a day should last. 1 (the default) is the normal day length. 2 means a day takes twice as long in real time. Any value from 0.25 to 10 works.[/*]
+[*][b]Everything keeps pace[/b]: hunger and other needs, plant growth, disaster countdowns and action times stretch with the day, so a day still costs the same food, and disasters still come on the same day.[/*]
 [*][b]Shorter days too[/b]: a value below 1 makes days shorter instead.[/*]
 [*][b]Every save[/b]: the day length is set each time you load a save.[/*]
 [/list]
@@ -50,11 +50,11 @@ It shows no text of its own, so it works with the game in any language.
 Delete [font=Courier New]DayLength.dll[/font] from the [font=Courier New]BepInEx\plugins[/font] folder.
 
 [size=5]Configuration[/size]
-To change the day length, edit [font=Courier New]DayLength[/font] in [font=Courier New]BepInEx\config\com.dev.survivallog.daylength.cfg[/font] while the game is closed, or do it in game on the Mod Manager's Mods screen (see [url=https://github.com/AnExiledDev/SurvivalLog-DayLength/blob/main/CONFIG.md]CONFIG.md[/url] for details). A new day length takes effect the next time you load a save. Each world can keep its own day length: pick it for a new world in Customizable Difficulty, or, while you play, change it for that world alone on the Mods screen.
+To change the day length, edit [font=Courier New]DayLength[/font] in [font=Courier New]BepInEx\config\com.dev.survivallog.daylength.cfg[/font] while the game is closed, or do it in game on the Mod Manager's Mods screen (see [url=https://github.com/AnExiledDev/SurvivalLog-DayLength/blob/main/CONFIG.md]CONFIG.md[/url] for details). A new day length takes effect the next time you load a save. Each world can keep its own day length. Pick it in Customizable Difficulty when you start a new world, or change it for the world you're playing on the Mods screen.
 
 [size=5]Feedback[/size]
 Found a bug or have an idea? Come say hi on the [url=https://discord.gg/trTsyxUFqg]Core Directive Discord[/url], or post in this page's Posts tab. For bugs, please include [font=Courier New]BepInEx\LogOutput.log[/font].
-To reach me directly, message [b]exiled.dev[/b] on Discord; you can find me in the [url=https://discord.gg/MZGg4gQAUe]official Survival Log Discord[/url]. I'm also on X as [url=https://x.com/AnExiledDev]@AnExiledDev[/url].
+To reach me directly, message [b]exiled.dev[/b] on Discord. You can find me in the [url=https://discord.gg/MZGg4gQAUe]official Survival Log Discord[/url]. I'm also on X as [url=https://x.com/AnExiledDev]@AnExiledDev[/url].
 
 [size=5]Source and license[/size]
 Open source under MIT: [url=https://github.com/AnExiledDev/SurvivalLog-DayLength]github.com/AnExiledDev/SurvivalLog-DayLength[/url]
@@ -62,13 +62,13 @@ Open source under MIT: [url=https://github.com/AnExiledDev/SurvivalLog-DayLength
 [line]
 [size=5]简体中文[/size]
 
-Survival Log 里的一天过得很快。Day Length 会放慢游戏时钟，让每一天在现实中持续更久，所有跟着时钟走的东西也会一起放慢。你有更多时间思考和规划，也不会有任何东西跑在时钟前面。
+Survival Log 里的一天过得很快。Day Length 会放慢游戏时钟，让每一天在现实中持续更久，所有跟着时钟走的东西也会一起放慢。每一天你都有更多现实时间来思考和规划。
 
-默认设置下本模组不做任何改变：一天保持游戏原本的长度，直到你设置 DayLength，例如设为 2 让一天变为两倍长。
+在你设置 DayLength 之前，本模组不做任何改变。设为 2，每一天就会变为两倍长。
 
 [size=5]主要功能[/size]
 [list]
-[*][b]更长的一天[/b]：设置一天要延长到几倍。默认值 1 为游戏原本的一天长度；2 表示一天的现实时间变为原来的两倍。可设为 0.25 到 10 之间的任意数值。[/*]
+[*][b]更长的一天[/b]：设置一天要延长到几倍。默认值 1 为正常的一天长度。2 表示一天的现实时间变为原来的两倍。可设为 0.25 到 10 之间的任意数值。[/*]
 [*][b]一切同步放慢[/b]：饥饿等需求、植物生长、灾难倒计时和动作时间都会随一天一起变长，所以每天消耗的食物不变，灾难也仍在同一天到来。[/*]
 [*][b]也能缩短[/b]：设为小于 1 的数值，一天反而会变短。[/*]
 [*][b]所有存档通用[/b]：每次读取存档时都会设置一天的长度。[/*]
@@ -106,7 +106,7 @@ Day Length 只改变游戏时间流逝的快慢，不会往存档里写入任何
 从 [font=Courier New]BepInEx\plugins[/font] 文件夹中删除 [font=Courier New]DayLength.dll[/font]。
 
 [size=5]配置[/size]
-如需修改一天的长度，可以在游戏内 Mod Manager 的「模组」界面修改，也可以在游戏关闭时编辑 [font=Courier New]BepInEx\config\com.dev.survivallog.daylength.cfg[/font] 中的 [font=Courier New]DayLength[/font]。配置文件中的设置有中文说明，完整说明见 [url=https://github.com/AnExiledDev/SurvivalLog-DayLength/blob/main/CONFIG.md]CONFIG.md[/url]（英文）。新的长度会在下次读取存档时生效。每个存档都可以有自己的昼夜时长：新存档可以在「自定义难度」里选，游戏中也可以在「模组」界面只为当前存档修改。
+如需修改一天的长度，可以在游戏内 Mod Manager 的「模组」界面修改，也可以在游戏关闭时编辑 [font=Courier New]BepInEx\config\com.dev.survivallog.daylength.cfg[/font] 中的 [font=Courier New]DayLength[/font]。配置文件中的设置有中文说明，完整说明见 [url=https://github.com/AnExiledDev/SurvivalLog-DayLength/blob/main/CONFIG.md]CONFIG.md[/url]（英文）。新的长度会在下次读取存档时生效。每个存档都可以有自己的昼夜时长：开新存档时可以在「自定义难度」里选，游戏中也可以在「模组」界面只修改当前存档的时长。
 
 [size=5]反馈[/size]
 发现 bug 或有好点子？欢迎来 [url=https://discord.gg/trTsyxUFqg]Core Directive Discord[/url] 打个招呼，或在本页的「Posts」标签里发帖。报告 bug 时，请附上 [font=Courier New]BepInEx\LogOutput.log[/font]。
