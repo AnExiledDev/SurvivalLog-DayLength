@@ -27,31 +27,18 @@ public static class DayScale
         return Math.Max(1, scaled);
     }
 
+    /// <summary>
+    /// The number to write as a world starts, or null to leave it. Every world start sets the chapter's number again
+    /// before this runs, so the value read is always the chapter's, even when it matches a number this mod wrote before.
+    /// </summary>
+    public static int? Change(int chapterScale, double dayLength)
+    {
+        var scaled = Scaled(chapterScale, dayLength);
+
+        return scaled == chapterScale ? null : scaled;
+    }
+
     /// <summary>How much longer a day really is after rounding to a whole number.</summary>
     public static double ActualDayLength(int chapterScale, int scaled) =>
         chapterScale <= 0 || scaled <= 0 ? 1 : (double)chapterScale / scaled;
-}
-
-/// <summary>
-/// The chapter writes its number before the world starts. Seeing the value this mod last wrote means it was
-/// already scaled, so the chapter's own number is the one kept from before, and a new day length is worked out from
-/// that, never from the scaled value.
-/// </summary>
-public sealed class ScaleTracker
-{
-    private int? _lastWritten;
-
-    /// <summary>The chapter's own number, as last seen before this mod changed it.</summary>
-    public int ChapterScale { get; private set; }
-
-    public int? Next(int current, double dayLength)
-    {
-        if (current != _lastWritten) ChapterScale = current;
-
-        var scaled = DayScale.Scaled(ChapterScale, dayLength);
-
-        _lastWritten = scaled;
-
-        return scaled == current ? null : scaled;
-    }
 }

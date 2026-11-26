@@ -8,15 +8,15 @@ using HarmonyLib;
 namespace DayLength.Adapters;
 
 /// <summary>
-/// The chapter sets Toolset.TimeScale before the logic world starts, and the clock, the disaster countdown and
-/// every timer read it while the world starts and loads the save. BattleLogicWorld.Initialize calls
+/// The chapter sets Toolset.TimeScale before the logic world starts (BattleMain's StartBattle and StartGuide both do,
+/// on every load), and the clock, the disaster countdown and and the clock, the disaster countdown and
+/// timer read it while the world starts and loads the save. BattleLogicWorld.Initialize calls
 /// ChallengeSetupContext.TryConsume first, before any manager starts, so scaling after it lands after the chapter and
 /// before any of them. Running last there lets a mod that starts the world's own settings in the same place
 /// (Customizable Difficulty) set this world's day length first.
 /// </summary>
 internal static class WorldStartPatch
 {
-    private static readonly ScaleTracker Tracker = new();
     private static Action<string> _log = _ => { };
     private static Func<double> _current = () => 1;
 
@@ -42,12 +42,10 @@ internal static class WorldStartPatch
         try
         {
             var current = Toolset.TimeScale;
-            var scaled = Tracker.Next(current, _current());
-
-            if (scaled is not int value) return;
+            if (DayScale.Change(current, _current()) is not int value) return;
 
             Toolset.TimeScale = value;
-            _log($"time scale {current} -> {value}, days are {DayScale.ActualDayLength(Tracker.ChapterScale, value):0.##}x as long");
+            _log($"time scale {current} -> {value}, days are {DayScale.ActualDayLength(current, value):0.##}x as long");
         }
         catch (Exception ex)
         {

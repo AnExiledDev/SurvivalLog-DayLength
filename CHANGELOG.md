@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.5
+
+- Fixed: after loading one save, a save from another part of the story could start with days at their normal length.
+- Made for Survival Log 1.1.21671.
+
 ## 0.3.4
 
 - Clearer wording in the settings and on the Mods screen.

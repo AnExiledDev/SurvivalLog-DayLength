@@ -12,7 +12,7 @@ namespace DayLength;
 public sealed class Plugin : BasePlugin
 {
     private const string Guid = "com.dev.survivallog.daylength";
-    private const string Version = "0.3.4";
+    private const string Version = "0.3.5";
     private const string ToolkitGuid = "com.dev.survivallog.exiledtoolkit";
 
     public override void Load()

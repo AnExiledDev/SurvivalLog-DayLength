@@ -9,7 +9,7 @@ public class DayScaleTests
     public void The_default_day_length_leaves_the_game_clock_alone()
     {
         // Installing the mod must change no balance until the player picks a day length.
-        Assert.Null(new ScaleTracker().Next(48, DayScale.DefaultDayLength));
+        Assert.Null(DayScale.Change(48, DayScale.DefaultDayLength));
     }
 
     [Fact]
@@ -53,70 +53,23 @@ public class DayScaleTests
     }
 
     [Fact]
-    public void A_new_chapter_value_is_scaled()
+    public void A_chapter_number_is_scaled()
     {
-        var tracker = new ScaleTracker();
-
-        Assert.Equal(24, tracker.Next(48, 2));
+        Assert.Equal(24, DayScale.Change(48, 2));
     }
 
     [Fact]
-    public void The_value_this_mod_wrote_is_never_divided_again()
+    public void A_chapter_number_equal_to_one_written_before_is_still_scaled()
     {
-        var tracker = new ScaleTracker();
-
-        tracker.Next(48, 2);
-
-        Assert.Null(tracker.Next(24, 2));
-    }
-
-    [Fact]
-    public void Loading_again_after_the_game_resets_the_number_scales_it_again()
-    {
-        var tracker = new ScaleTracker();
-
-        tracker.Next(48, 2);
-        tracker.Next(24, 2);
-
-        Assert.Equal(24, tracker.Next(48, 2));
-    }
-
-    [Fact]
-    public void A_new_day_length_on_an_already_scaled_number_works_from_the_chapter_number()
-    {
-        var tracker = new ScaleTracker();
-
-        tracker.Next(48, 2);
-
-        Assert.Equal(12, tracker.Next(24, 4));
-    }
-
-    [Fact]
-    public void Going_back_to_normal_length_restores_the_chapter_number()
-    {
-        var tracker = new ScaleTracker();
-
-        tracker.Next(48, 2);
-
-        Assert.Equal(48, tracker.Next(24, 1));
-    }
-
-    [Fact]
-    public void The_chapter_number_is_kept_for_the_log()
-    {
-        var tracker = new ScaleTracker();
-
-        tracker.Next(48, 2);
-        tracker.Next(24, 4);
-
-        Assert.Equal(48, tracker.ChapterScale);
+        // Chapter 0 (120) at half length becomes 240, and chapter 2's own number is 240. Each load sets the chapter's
+        // number first, so the second load must be scaled too.
+        Assert.Equal(240, DayScale.Change(120, 0.5));
+        Assert.Equal(480, DayScale.Change(240, 0.5));
     }
 
     [Fact]
     public void Normal_day_length_writes_nothing()
     {
-        var tracker = new ScaleTracker();
-
-        Assert.Null(tracker.Next(48, 1));
+        Assert.Null(DayScale.Change(48, 1));
     }
 }
